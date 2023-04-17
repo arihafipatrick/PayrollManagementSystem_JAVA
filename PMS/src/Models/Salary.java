@@ -18,21 +18,22 @@ import javax.persistence.Id;
 @Entity
 public class Salary implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int salaryId;
-    private int bonus;
+    private int BS;
     private int TA;
     private int WA;
-    private int employeeId;
+    private int net;
+    private String employeeId;
 
     public Salary() {
     }
 
-    public Salary(int salaryId, int bonus, int TA, int WA, int employeeId) {
+    public Salary(int salaryId, int BS, int TA, int WA, int net, String employeeId) {
         this.salaryId = salaryId;
-        this.bonus = bonus;
+        this.BS = BS;
         this.TA = TA;
         this.WA = WA;
+        this.net = net;
         this.employeeId = employeeId;
     }
 
@@ -44,12 +45,12 @@ public class Salary implements Serializable {
         this.salaryId = salaryId;
     }
 
-    public int getBonus() {
-        return bonus;
+    public int getBS() {
+        return BS;
     }
 
-    public void setBonus(int bonus) {
-        this.bonus = bonus;
+    public void setBS(int BS) {
+        this.BS = BS;
     }
 
     public int getTA() {
@@ -68,13 +69,22 @@ public class Salary implements Serializable {
         this.WA = WA;
     }
 
-    public int getEmployeeId() {
+    public int getNet() {
+        return net;
+    }
+
+    public void setNet(int net) {
+        this.net = net;
+    }
+
+    public String getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
+
     
     
 }
